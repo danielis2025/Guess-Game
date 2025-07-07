@@ -21,15 +21,32 @@ def draw_boxes(top_highlight=None, bottom_select=None):
     print("\n  " + "   ".join(bottom))
     print(" BOTTOM")
 
+
 def flicker_boxes(duration=5):
+    message = "AFTER ROUND ONE ORIGINAL PANADOL EXTRA O TUN GBE DE"
+    words = message.split()
     start_time = time.time()
     current = 0
-    while time.time() - start_time < duration:
+    sentence = ""
+
+    word_index = 0
+    interval = 0.5  # seconds per word
+    total_words = int(duration / interval)
+
+    while time.time() - start_time < duration and word_index < len(words):
+        sentence += words[word_index] + " "
         clear_screen()
         draw_boxes(top_highlight=current)
+        print("\n\n" + sentence.strip())
         current = 1 - current
-        time.sleep(0.3)
+        word_index += 1
+        time.sleep(interval)
+
     return random.randint(0, 1)
+
+
+
+
 
 def get_player_input(timeout=3):
     print("\nPress ← or → to choose the mirrored box!")
@@ -52,7 +69,7 @@ def main():
 
         # Flicker and settle
         settled = flicker_boxes()
-        mirrored = 1 - settled
+        mirrored = settled
 
         # Get player input
         player_choice = get_player_input()
@@ -64,7 +81,8 @@ def main():
         if player_choice is None:
             print("\n⏰ Time's up! No input detected.")
         elif player_choice == mirrored:
-            print("\n✅ Correct! You matched the mirror image.")
+            print("\n✅ Correct! You matched the mirror image."
+                   ) 
         else:
             print("\n❌ Wrong! That wasn't the mirror image.")
 
