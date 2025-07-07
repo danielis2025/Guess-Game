@@ -48,7 +48,7 @@ def flicker_boxes(duration=5):
 
 
 
-def get_player_input(timeout=3):
+def get_player_input(timeout=2):
     print("\nPress ← or → to choose the mirrored box!")
     start_time = time.time()
     while time.time() - start_time < timeout:
@@ -59,6 +59,7 @@ def get_player_input(timeout=3):
     return None
 
 def main():
+    
     while True:
         clear_screen()
         print("🎮 Mirror Match Game 🎮")
