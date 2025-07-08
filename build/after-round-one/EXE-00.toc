@@ -1,5 +1,5 @@
 ('/workspaces/Guess-Game/dist/after-round-one',
- False,
+ True,
  False,
  False,
  None,
@@ -42,7 +42,9 @@
    '/usr/local/python/3.12.1/lib/python3.12/site-packages/PyInstaller/hooks/rthooks/pyi_rth_inspect.py',
    'PYSOURCE'),
   ('after-round-one', '/workspaces/Guess-Game/after-round-one.py', 'PYSOURCE'),
-  ('libpython3.12.so', '/lib/x86_64-linux-gnu/libpython3.12.so', 'BINARY'),
+  ('libpython3.12.so.1.0',
+   '/lib/x86_64-linux-gnu/libpython3.12.so.1.0',
+   'BINARY'),
   ('lib-dynload/grp.cpython-312-x86_64-linux-gnu.so',
    '/usr/local/python/3.12.1/lib/python3.12/lib-dynload/grp.cpython-312-x86_64-linux-gnu.so',
    'EXTENSION'),
@@ -169,8 +171,8 @@
  [],
  False,
  False,
- 1751975486,
+ 1751975903,
  [('run',
    '/usr/local/python/3.12.1/lib/python3.12/site-packages/PyInstaller/bootloader/Linux-64bit-intel/run',
    'EXECUTABLE')],
- '/lib/x86_64-linux-gnu/libpython3.12.so')
+ '/lib/x86_64-linux-gnu/libpython3.12.so.1.0')
